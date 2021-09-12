@@ -1,5 +1,6 @@
 const dino = document.getElementById("dino");
 const cactus = document.getElementById("cactus");
+const gameOverText = document.querySelector(".gameOverWarning");
 
 document.addEventListener("keydown", function(event) {
     jump();
@@ -15,12 +16,14 @@ function jump() {
 }
 
 let isAlive = setInterval(function(){
-    let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+    let dinoBottom = parseInt(window.getComputedStyle(dino).getPropertyValue("bottom"));
     let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
 
-    if(cactusLeft < 30 && cactusLeft > 0 && dinoTop >= 150) {
-        // cactus.style.animation ="none";
-        // cactus.style.display ="none";
+    if(cactusLeft < 60 && cactusLeft > 0 && dinoBottom <= 60) {
+        cactus.style.animation ="none";
+        cactus.style.display ="none";
+        gameOverText.classList.remove("hidden");
+        gameOverText.classList.add("active")
         // alert("Przegraes:(");
     }
 }, 100);
