@@ -1,21 +1,26 @@
 
 .game {
     width: 1000px;
-    height: 600px;
+    height: 550px;
     border-bottom: 1px solid black;
     margin: auto;
     background-color: skyblue;
     position: relative;
+    overflow: hidden;
 }
 
 .cloud.one {
 
     width: 150px;
     height: 50px;
+    position: absolute;
+    top: 120px;
 }
 .cloud.two {
     width: 130px;
     height: 40px;
+    position: absolute;
+    top: 100px;
     animation-duration: 10s;
 }
 .cloud.three {
@@ -24,7 +29,7 @@
     animation-duration: 7s;
 }
 .cloud {
-    position: relative;
+    position: absolute;
     top: 50px;
     background-color: white;
     border-radius: 1000px;
@@ -158,4 +163,21 @@
     /* background-color: orange;
     color: black;  */
     
+}
+
+.text {
+    color: rgb(128, 6, 6);
+    font-weight: 700;
+    font-size: 24px;
+    position: absolute;
+    top: 200px;
+    right: 20px;
+}
+
+.resultInfo {
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    font-size: 30px;
+    color: rgb(119, 2, 2);
 }
