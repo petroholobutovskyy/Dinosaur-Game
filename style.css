@@ -1,10 +1,85 @@
 
 .game {
-    width: 600px;
-    height: 200px;
+    width: 1000px;
+    height: 600px;
     border-bottom: 1px solid black;
     margin: auto;
-    background-color: lightgreen;
+    background-color: skyblue;
+    position: relative;
+}
+
+.cloud.one {
+
+    width: 150px;
+    height: 50px;
+}
+.cloud.two {
+    width: 130px;
+    height: 40px;
+    animation-duration: 10s;
+}
+.cloud.three {
+    width: 100px;
+    height: 30px;
+    animation-duration: 7s;
+}
+.cloud {
+    position: relative;
+    top: 50px;
+    background-color: white;
+    border-radius: 1000px;
+    animation: zoomies 5s infinite linear;
+    z-index: 1;
+}
+.cloud::before {
+    content: '';
+    position: absolute;
+    top: -80%;
+    left: 10%;
+    width: 50%;
+    height: 150%;
+    background: white;
+    border-radius:50% ;
+}
+.cloud::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: 20%;
+    width: 30%;
+    height: 100%;
+    background: white;
+    border-radius:50% ;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: yellow;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    
+}
+
+@keyframes zoomies {
+    from {
+        left: 100%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+
+
+.ground {
+    width: 1000px;
+    height: 100px;
+    background-color: green;
+    margin: auto;
 }
 
 .imageGame {
@@ -16,22 +91,22 @@
 }
 
 #dino {
-    width: 70px;
-    height: 60px;
+    width: 140px;
+    height: 120px;
     background-image: url("img/dinosaur.png");
     background-size: contain;
-    position: relative;
+    position: absolute;
     background-repeat: no-repeat;
-    top: 150px;
+    bottom: 0;
    
 }
 #cactus {
-    width: 20px;
-    height: 40px;
+    width: 60px;
+    height: 100px;
     background-image: url("img/cactus.png");
-    background-size: 30px 50px;
-    position: relative;
-    top: 110px;
+    background-size: 60px 100px;
+    position: absolute;
+    bottom: 0;
     left: 580px;
     animation: cactusMov 1.5s infinite linear;
 }
